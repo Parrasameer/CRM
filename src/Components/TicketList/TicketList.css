@@ -1,0 +1,25 @@
+.container {
+    margin-top: 15px;
+
+}
+
+.drop {
+    color: white;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-box {
+    outline: none;
+    border: none;
+}
+
+.search-wrapper {
+    border: 1px solid lightblue;
+    padding: 3px;
+    border-radius: 5px;
+}

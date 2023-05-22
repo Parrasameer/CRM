@@ -1,0 +1,26 @@
+[
+    {
+        "name": "wipro",
+        "website": "www.wipro.com",
+        "year": "1990",
+        "employes": "10000",
+        "ceo": "jack",
+        "revenue": "10crore"
+    },
+    {
+        "name": "tcs",
+        "website": "www.tcs.com",
+        "year": "1980",
+        "employes": "1000",
+        "ceo": "Jones",
+        "revenue": "100crore"
+    },
+    {
+        "name": "hcl",
+        "website": "www.hcl.com",
+        "year": "1878",
+        "employes": "100900",
+        "ceo": "Imis",
+        "revenue": "100lakh"
+    }
+]

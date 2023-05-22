@@ -1,0 +1,31 @@
+.signup {
+
+    display: flex;
+
+
+}
+
+img {
+    width: 70%;
+}
+
+.left {
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right hr {
+    margin-bottom: 60px;
+}
+
+.right {
+    border-left: 1px solid lightblue;
+    padding: 30px;
+
+    margin-top: 50px;
+    margin-right: 40px;
+    width: 48%;
+}

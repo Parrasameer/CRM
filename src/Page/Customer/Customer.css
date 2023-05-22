@@ -1,0 +1,49 @@
+.btn {
+    margin: 10px 0px;
+}
+
+.Header {
+    text-align: center;
+}
+
+.alert-primary {
+    font-weight: bolder;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-warning {
+    color: red !important;
+}
+
+.new {
+    background-color: blue !important;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.accepted {
+    background-color: green !important;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.rejected {
+    background-color: red !important;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.grey {
+    background-color: antiquewhite;
+}
+
+.Page {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
