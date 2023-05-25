@@ -23,3 +23,24 @@
     padding: 3px;
     border-radius: 5px;
 }
+
+.status_assigned {
+    background-color: plum !important;
+}
+
+.ticket_edit_button {
+    padding: 5px !important;
+    width: 4rem;
+}
+
+.status_new {
+    background-color: blue !important;
+}
+
+.status_inProgress {
+    background-color: blueviolet !important;
+}
+
+.status_completed {
+    background-color: green !important;
+}

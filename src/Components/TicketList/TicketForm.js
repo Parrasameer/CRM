@@ -24,6 +24,7 @@ function TicketForm() {
                 setCustomer(res)
 
 
+
             });
         fetch("http://localhost:4000/api/user")
             .then(res => res.json())
@@ -101,11 +102,15 @@ function TicketForm() {
                         </select> */}
                         <br />
 
-                        <Dropdown value={userData.customerName} onChange={(e) => {
-                            let obj = { ...userData }
-                            obj.customerName = e.target.value
-                            setData(obj)
-                        }} options={customer} optionLabel="name" placeholder="Select a Customer"
+                        <Dropdown disabled={read}
+
+                            value={
+                                customer.find(c => c.name == userData.customer)
+                            } onChange={(e) => {
+                                let obj = { ...userData }
+                                obj.customer = e.value.name
+                                setData(obj)
+                            }} options={customer} optionLabel="name" placeholder="Select a Customer"
                             filter className="w-full" />
 
                     </div>

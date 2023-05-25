@@ -89,17 +89,23 @@ function TicketList() {
                     </thead>
 
                     {searchtickets.map((e, i) => (
-                        <tbody className=" table  table-dark table-striped">
+                        <tbody className=" table  striped">
                             <tr>
                                 <td > {i + 1}</td>
                                 <td > {e.customer}</td>
                                 <td > {e.desc}</td>
                                 <td > {e.assignedTo}</td>
-                                <td >{e.status}</td>
+                                <td >{e.status === "Assigned" && <div className="status_assigned"> Assigned</div>}
+                                    {e.status === "In Progress" && <div className="status_inProgress"> In Progress</div>}
+                                    {e.status === "Completed" && <div className="status_completed"> Completed</div>}
+                                    {e.status === "New" && <div className="status_new"> New</div>}
+
+
+                                </td>
                                 <td > {e.raisedOn}</td>
                                 <td > <button onClick={() => {
                                     handleEdit(e.desc)
-                                }} className="btn btn-success"> Edit</button></td>
+                                }} className="btn btn-success ticket_edit_button"> Edit</button></td>
                             </tr>
                         </tbody>
                     ))}
