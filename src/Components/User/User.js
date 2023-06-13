@@ -38,11 +38,11 @@ function User() {
 
 
     useEffect(() => {
-        fetch('http://localhost:4000/api/user')
+        fetch(process.env.REACT_APP_APIURL + 'user')
             .then(res => res.json())
             .then(res => {
                 setUsers(res)
-                console.log(res)
+
 
 
 
@@ -65,7 +65,7 @@ function User() {
     // })
     function Activate(username) {
 
-        fetch("http://localhost:4000/api/user/activate/" + username, {
+        fetch(process.env.REACT_APP_APIURL + "user/activate/" + username, {
             method: "PUT",
 
         }
@@ -74,7 +74,7 @@ function User() {
 
     }
     function Deactivate(username) {
-        fetch("http://localhost:4000/api/user/deActivate/" + username, {
+        fetch(process.env.REACT_APP_APIURL + "user/deActivate/" + username, {
             method: "PUT",
 
         }).then(res => res.json())

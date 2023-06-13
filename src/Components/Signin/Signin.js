@@ -9,8 +9,8 @@ function Signin() {
     const [signIn, setSignIn] = useState({})
     function login(e) {
         e.preventDefault()
-        console.log(e)
-        fetch("http://localhost:4000/api/user/signin", {
+
+        fetch(process.env.REACT_APP_APIURL + "user/signin", {
             method: "POST",
             body: JSON.stringify(signIn),
             headers: {

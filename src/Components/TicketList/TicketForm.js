@@ -18,7 +18,7 @@ function TicketForm() {
     useEffect(() => {
 
 
-        fetch("http://localhost:4000/api/customer")
+        fetch(process.env.REACT_APP_APIURL + "customer")
             .then(res => res.json())
             .then(res => {
                 setCustomer(res)
@@ -26,7 +26,7 @@ function TicketForm() {
 
 
             });
-        fetch("http://localhost:4000/api/user")
+        fetch(process.env.REACT_APP_APIURL + "user")
             .then(res => res.json())
             .then(res => {
                 setAssigned(res)
@@ -37,7 +37,7 @@ function TicketForm() {
         if (name) {
             setRead(true);
             setDisable(true);
-            fetch('http://localhost:4000/api/ticket/' + name)
+            fetch(process.env.REACT_APP_APIURL + 'ticket/' + name)
                 .then((res) => res.json())
                 .then((res) => {
 
@@ -51,14 +51,13 @@ function TicketForm() {
 
     function handleTicketForm(e) {
         e.preventDefault()
-        console.log(userData)
         if (!userData.status) {
             return setValueMissing(true)
 
 
         }
 
-        fetch("http://localhost:4000/api/ticket", {
+        fetch(process.env.REACT_APP_APIURL + "ticket", {
             method: name ? "PUT" : "POST",
             body: JSON.stringify(userData),
             headers: {

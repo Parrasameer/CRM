@@ -40,7 +40,7 @@ function Customer() {
     const [pageNo, setPageNo] = useState(1)
 
     useEffect(() => {
-        fetch('http://localhost:4000/api/customer/page/' + pageNo)
+        fetch(process.env.REACT_APP_APIURL + 'customer/page/' + pageNo)
             .then(res => res.json())
             .then(res => {
 
@@ -79,7 +79,7 @@ function Customer() {
 
 
 
-        fetch("http://localhost:4000/api/customer/" + name, {
+        fetch(process.env.REACT_APP_APIURL + "customer/" + name, {
             method: "DELETE",
 
 

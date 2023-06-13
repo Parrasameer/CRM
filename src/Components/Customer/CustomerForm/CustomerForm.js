@@ -26,7 +26,7 @@ function CustomerForm() {
 
     useEffect(() => {
         if (name) {
-            fetch('http://localhost:4000/api/customer/' + name)
+            fetch(process.env.REACT_APP_APIURL + 'customer/' + name)
                 .then(res => res.json())
                 .then((res) => {
 
@@ -37,9 +37,9 @@ function CustomerForm() {
     }, [])
     function handleEvent(e) {
         e.preventDefault()
+        console.log(process.env.REACT_APP_APIURL)
 
-
-        fetch("http://localhost:4000/api/customer", {
+        fetch(process.env.REACT_APP_APIURL + "customer", {
             method: name ? "PUT" : "POST",
             body: JSON.stringify(userData),
             headers: {
@@ -54,9 +54,9 @@ function CustomerForm() {
     }
     function handleUpdate(e) {
         e.preventDefault()
+        console.log(process.env.REACT_APP_APIURL)
 
-
-        fetch("http://localhost:4000/api/customer", {
+        fetch(process.env.REACT_APP_APIURL + "customer", {
             method: "PUT",
             body: JSON.stringify(userData),
             headers: {

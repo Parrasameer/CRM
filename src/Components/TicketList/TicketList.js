@@ -11,7 +11,7 @@ function TicketList() {
 
     const navigate = useNavigate()
     useEffect(() => {
-        fetch("http://localhost:4000/api/ticket")
+        fetch(process.env.REACT_APP_APIURL + "ticket")
             .then(res => res.json())
             .then(res => {
                 setTickets(res)
@@ -42,8 +42,7 @@ function TicketList() {
         navigate("/ticketForm/" + name)
     }
     function handleTicketSearch(e) {
-        console.log(e)
-        console.log(tickets)
+
         if (!e || e.length === 0) {
             setSearchTickets(tickets)
         }
@@ -51,6 +50,18 @@ function TicketList() {
             const result = tickets.filter(c => c.desc.includes(e));
 
             setSearchTickets(result)
+        }
+    }
+    function getStatusStyle(status) {
+        switch (status) {
+            case "New":
+                return "status_new";
+            case "Completed":
+                return "status_completed";
+            case "In Progress":
+                return "status_inProgress";
+            case "Assigned":
+                return "status_assigned";
         }
     }
     return (
@@ -95,13 +106,7 @@ function TicketList() {
                                 <td > {e.customer}</td>
                                 <td > {e.desc}</td>
                                 <td > {e.assignedTo}</td>
-                                <td >{e.status === "Assigned" && <div className="status_assigned"> Assigned</div>}
-                                    {e.status === "In Progress" && <div className="status_inProgress"> In Progress</div>}
-                                    {e.status === "Completed" && <div className="status_completed"> Completed</div>}
-                                    {e.status === "New" && <div className="status_new"> New</div>}
-
-
-                                </td>
+                                <td className={getStatusStyle(e.status)}> {e.status}</td>
                                 <td > {e.raisedOn}</td>
                                 <td > <button onClick={() => {
                                     handleEdit(e.desc)

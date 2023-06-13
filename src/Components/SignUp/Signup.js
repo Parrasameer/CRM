@@ -6,10 +6,7 @@ function Signup() {
     const [sign, setSign] = useState({})
     function signUp(e) {
         e.preventDefault()
-        console.log(sign)
-
-
-        fetch("http://localhost:4000/api/user/signup", {
+        fetch(process.env.REACT_APP_APIURL + "user/signup", {
             method: "POST",
             body: JSON.stringify(sign),
             headers: {
